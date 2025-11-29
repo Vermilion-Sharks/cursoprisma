@@ -1,0 +1,2 @@
+URL do postman para testar a API:
+https://jaobrabo123.postman.co/workspace/jaobrabo123's-Workspace~320b093a-2d1b-46bc-836e-814425d5bb6b/request/46795310-c4cba233-e40c-42f5-928c-3a3883e4f6f0?action=share&creator=46795310&ctx=documentation&active-environment=46795310-67fc8ce0-110a-439f-8275-ce8ceeb39c16

@@ -1,0 +1,81 @@
+create table usuarios(
+	id serial primary key,
+	nome varchar(100) not null,
+	genero char(1) not null,
+	idade varchar(3) not null,
+	email varchar(255) not null
+)
+
+create table itens(
+	id serial primary key,
+	nome varchar(100) not null,
+	descricao varchar(255) not null,
+	preco decimal(10,2) not null,
+	usuario_id integer not null,
+	foreign key (usuario_id) references usuarios(id) on delete cascade
+)
+
+-- Inserindo usuários
+INSERT INTO usuarios (nome, genero, idade, email) VALUES
+('Ana Silva', 'F', '28', 'ana.silva@email.com'),
+('Carlos Oliveira', 'M', '32', 'carlos.oliveira@email.com'),
+('Mariana Santos', 'F', '25', 'mariana.santos@email.com'),
+('João Pereira', 'M', '30', 'joao.pereira@email.com'),
+('Juliana Costa', 'F', '22', 'juliana.costa@email.com'),
+('Ricardo Almeida', 'M', '35', 'ricardo.almeida@email.com'),
+('Fernanda Lima', 'F', '29', 'fernanda.lima@email.com'),
+('Pedro Souza', 'M', '27', 'pedro.souza@email.com'),
+('Amanda Rocha', 'F', '31', 'amanda.rocha@email.com'),
+('Bruno Carvalho', 'M', '26', 'bruno.carvalho@email.com');
+
+-- Inserindo itens para cada usuário (3 itens por usuário)
+INSERT INTO itens (nome, descricao, preco, usuario_id) VALUES
+-- Itens do usuário 1 (Ana Silva)
+('Notebook Dell', 'Notebook Dell Inspiron 15, 8GB RAM, 256GB SSD', 2500.00, 1),
+('Mouse Logitech', 'Mouse sem fio Logitech M170', 45.90, 1),
+('Teclado Mecânico', 'Teclado mecânico RGB Redragon Kumara', 199.99, 1),
+
+-- Itens do usuário 2 (Carlos Oliveira)
+('iPhone 13', 'iPhone 13 128GB, tela 6.1", azul', 3800.00, 2),
+('Capinha Protetora', 'Capinha silicone para iPhone 13', 59.90, 2),
+('Carregador Wireless', 'Carregador wireless MagSafe', 199.00, 2),
+
+-- Itens do usuário 3 (Mariana Santos)
+('Kindle Paperwhite', 'Leitor de e-books Kindle 10ª geração', 449.00, 3),
+('Capa para Kindle', 'Capa protetora para Kindle Paperwhite', 79.90, 3),
+('Fone de Ouvido', 'Fone de ouvido Bluetooth JBL Tune 510BT', 199.00, 3),
+
+-- Itens do usuário 4 (João Pereira)
+('PlayStation 5', 'Console PlayStation 5 edição digital', 3500.00, 4),
+('Controle DualSense', 'Controle PS5 DualSense branco', 349.00, 4),
+('God of War Ragnarok', 'Jogo God of War Ragnarok para PS5', 299.00, 4),
+
+-- Itens do usuário 5 (Juliana Costa)
+('Câmera Canon', 'Câmera Canon EOS Rebel T7 com lente 18-55mm', 1800.00, 5),
+('Tripé', 'Tripé profissional para câmera', 120.00, 5),
+('Cartão Memória', 'Cartão de memória SD 64GB Classe 10', 89.90, 5),
+
+-- Itens do usuário 6 (Ricardo Almeida)
+('Smart TV 55"', 'Smart TV LG 55" 4K UHD WebOS', 2200.00, 6),
+('Soundbar', 'Soundbar Samsung 2.1 canais com subwoofer', 499.00, 6),
+('Suporte TV', 'Suporte parede para TV até 65"', 150.00, 6),
+
+-- Itens do usuário 7 (Fernanda Lima)
+('Geladeira', 'Geladeira Frost Free Brastemp 375L', 2800.00, 7),
+('Fogão 4 Bocas', 'Fogão 4 bocas Atlas com acendimento automático', 899.00, 7),
+('Micro-ondas', 'Micro-ondas Electrolux 20L', 450.00, 7),
+
+-- Itens do usuário 8 (Pedro Souza)
+('Mountain Bike', 'Bicicleta mountain bike Caloi aro 29', 1200.00, 8),
+('Capacete', 'Capacete para ciclismo profissional', 89.90, 8),
+('Luva Ciclista', 'Luva para ciclismo com proteção', 35.00, 8),
+
+-- Itens do usuário 9 (Amanda Rocha)
+('Sofá 3 Lugares', 'Sofá 3 lugares retrátil e reclinável', 1500.00, 9),
+('Mesa de Centro', 'Mesa de centro em madeira maciça', 320.00, 9),
+('Tapete Persa', 'Tapete persa 2x3m', 280.00, 9),
+
+-- Itens do usuário 10 (Bruno Carvalho)
+('Violão Acústico', 'Violão acústico Giannini GD-10S', 350.00, 10),
+('Palhetas', 'Kit com 10 palhetas variadas', 15.90, 10),
+('Afinador Digital', 'Afinador digital cromático', 49.90, 10);
